@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Autoverificación de Empaque</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f0f0; }
+    form { background: white; padding: 20px; border-radius: 10px; max-width: 1200px; margin: auto; }
+    h2, h3 { text-align: center; }
+    .seccion { margin-bottom: 30px; }
+    .grupo { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+    label { width: 200px; font-weight: bold; }
+    input, select, textarea { flex: 1 0 200px; padding: 5px; }
+    .grupo-radio { display: flex; align-items: center; gap: 10px; }
+    .btns { text-align: center; margin-top: 20px; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<form action="https://formsubmit.co/tucorreo@example.com" method="POST">
+  <h2>Autoverificación de Proceso de Empaque</h2>
+
+  <!-- AUTOVERIFICACION PROCESO DE EMPAQUE -->
+  <div class="seccion">
+    <h3>Autoverificación Proceso de Empaque</h3>
+    <div class="grupo">
+      <label>Fecha:</label><input type="date" name="fecha">
+      <label>Máquina:</label>
+      <select name="maquina">
+        <option>Seleccionar</option><option>M1</option><option>M2</option><option>M3</option>
+      </select>
+    </div>
+    <div class="grupo-radio">
+      <label>Turno:</label>
+      <label><input type="radio" name="turno" value="1"> 1</label>
+      <label><input type="radio" name="turno" value="2"> 2</label>
+      <label><input type="radio" name="turno" value="3"> 3</label>
+    </div>
+    <div class="grupo">
+      <label>Rollo 1 Inicio Base(kg):</label><input type="number" name="rollo1_inicio_base">
+      <label>Rollo 1 Fin Base(kg):</label><input type="number" name="rollo1_fin_base">
+      <label>Rollo 1 Inicio Tapa(kg):</label><input type="number" name="rollo1_inicio_tapa">
+      <label>Rollo 1 Fin Tapa(kg):</label><input type="number" name="rollo1_fin_tapa">
+    </div>
+    <div class="grupo">
+      <label>Rollo 2 Inicio Base(kg):</label><input type="number" name="rollo2_inicio_base">
+      <label>Rollo 2 Fin Base(kg):</label><input type="number" name="rollo2_fin_base">
+      <label>Rollo 2 Inicio Tapa(kg):</label><input type="number" name="rollo2_inicio_tapa">
+      <label>Rollo 2 Fin Tapa(kg):</label><input type="number" name="rollo2_fin_tapa">
+    </div>
+    <div class="grupo">
+      <label>Rollo 3 Inicio Base(kg):</label><input type="number" name="rollo3_inicio_base">
+      <label>Rollo 3 Fin Base(kg):</label><input type="number" name="rollo3_fin_base">
+    </div>
+  </div>
+
+  <!-- PRODUCTO -->
+  <div class="seccion">
+    <h3>Producto</h3>
+    <div class="grupo">
+      <label>Nombre completo:</label><input type="text" name="nombre_completo">
+      <label>Código TPM:</label><input type="text" name="codigo_tpm">
+      <label>OP / # Bache:</label><input type="text" name="op_bache">
+      <label>Hora:</label><input type="time" name="hora">
+    </div>
+    <div class="grupo">
+      <label>KG:</label><input type="number" name="kg">
+      <label># Paquetes:</label><input type="number" name="paquetes">
+      <label># Canasta:</label><input type="text" name="canasta">
+      <label>KG Recorte:</label><input type="number" name="kg_recorte">
+    </div>
+    <div class="grupo">
+      <label>Codificación:</label><input type="text" name="codificacion">
+      <label>Liberación:</label><input type="text" name="liberacion">
+    </div>
+    <div class="grupo">
+      <label>Hermeticidad:</label>
+      <select name="hermeticidad">
+        <option>✔</option><option>✘</option>
+      </select>
+      <label>Calibre:</label>
+      <select name="calibre">
+        <option>✔</option><option>✘</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- CONDICIONES DEL PROCESO Y EQUIPO -->
+  <div class="seccion">
+    <h3>Condiciones del Proceso</h3>
+    <div class="grupo">
+      <label>T. Producto antes del Empaque:</label><input type="text" name="t_antes">
+      <label>T. Producto después del Empaque:</label><input type="text" name="t_despues">
+      <label>Temp. Formado:</label><input type="text" name="temp_formado">
+      <label>Tiempo Formado:</label><input type="text" name="tiempo_formado">
+    </div>
+    <div class="grupo">
+      <label>Temp. Sellado:</label><input type="text" name="temp_sellado">
+      <label>Tiempo Sellado:</label><input type="text" name="tiempo_sellado">
+      <label>Presión Vacío:</label><input type="text" name="presion_vacio">
+      <label>Presión Sellado:</label><input type="text" name="presion_sellado">
+    </div>
+    <div class="grupo">
+      <label>Tapa Proveedor:</label><input type="text" name="tapa_proveedor">
+      <label>Tapa Lote:</label><input type="text" name="tapa_lote">
+      <label>Base Proveedor:</label><input type="text" name="base_proveedor">
+      <label>Base Lote:</label><input type="text" name="base_lote">
+    </div>
+    <div class="grupo">
+      <label>Unidades de Reempaque:</label><input type="number" name="unidades_reempaque">
+      <label>KG materia Desperdicio:</label><input type="number" name="kg_desperdicio">
+    </div>
+  </div>
+
+  <!-- FIRMAS Y OBSERVACIONES -->
+  <div class="seccion">
+    <div class="grupo">
+      <label>Responsable:</label><input type="text" name="responsable">
+      <label>Observaciones:</label><input type="text" name="observaciones">
+    </div>
+    <div class="grupo">
+      <label>Verificado por:</label><input type="text" name="verificado">
+      <label>Liberado por:</label><input type="text" name="liberado">
+    </div>
+  </div>
+
+  <div class="btns">
+    <button type="submit">Registrar</button>
+    <button type="reset">Borrar último registro</button>
+  </div>
+</form>
+
+</body>
+</html>
