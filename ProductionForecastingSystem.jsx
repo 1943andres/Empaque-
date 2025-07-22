@@ -157,10 +157,8 @@ const ProductionForecastingSystem = () => {
     setLoading(true);
     
     try {
-      // Simular procesamiento del archivo
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Simular datos procesados
       const processedData = {
         totalProducts: sampleData.products.length,
         totalWeeks: 132,
@@ -187,10 +185,8 @@ const ProductionForecastingSystem = () => {
     setLoading(true);
     
     try {
-      // Simular análisis predictivo
       await new Promise(resolve => setTimeout(resolve, 3000));
       
-      // Simular predicciones
       const predictedData = {
         nextWeeks: 4,
         confidence: 0.85,
@@ -219,7 +215,6 @@ const ProductionForecastingSystem = () => {
     setLoading(true);
     
     try {
-      // Simular cálculo de lotes
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       const plan = {
@@ -229,9 +224,9 @@ const ProductionForecastingSystem = () => {
           const weeklyBatches = product.predictions.map(pred => ({
             week: pred.week,
             sales: pred.sales,
-            batches: Math.ceil(pred.sales / 50), // Simulando ratio de conversión
-            kilos: Math.ceil(pred.sales / 50) * 25, // Simulando 25kg por lote
-            packages: Math.ceil(pred.sales / 50) * 20 // Simulando 20 paquetes por lote
+            batches: Math.ceil(pred.sales / 50),
+            kilos: Math.ceil(pred.sales / 50) * 25,
+            packages: Math.ceil(pred.sales / 50) * 20
           }));
           
           return {
@@ -269,7 +264,6 @@ const ProductionForecastingSystem = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="bg-white rounded-xl shadow-xl p-6 mb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -288,7 +282,6 @@ const ProductionForecastingSystem = () => {
           </div>
         </div>
 
-        {/* Navigation Tabs */}
         <div className="bg-white rounded-xl shadow-lg p-4 mb-6">
           <div className="flex flex-wrap gap-2">
             <TabButton id="upload" label="Cargar Datos" icon={Upload} isActive={activeTab === 'upload'} />
@@ -299,7 +292,6 @@ const ProductionForecastingSystem = () => {
           </div>
         </div>
 
-        {/* Content Area */}
         <div className="bg-white rounded-xl shadow-xl p-6">
           {activeTab === 'upload' && (
             <div className="text-center py-12">
